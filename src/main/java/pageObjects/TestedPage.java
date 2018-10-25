@@ -117,6 +117,7 @@ public class TestedPage {
     }
 
     public void checkFrameDisplaying() {
+
         assertTrue(mainFrame.isDisplayed());
     }
 
@@ -126,18 +127,22 @@ public class TestedPage {
     }
 
     public void checkSubHeaderDisplaying() {
+
         assertTrue(subHeader.isDisplayed());
     }
 
     public void checkSubHeaderLink(String link) {
+
         assertEquals(subHeader.getAttribute("href"), link);
     }
 
     public void checkLeftSectionDisplaying() {
+
         assertTrue(leftSection.isDisplayed());
     }
 
     public void checkFooterDisplaying() {
+
         assertTrue(footer.isDisplayed());
     }
 }

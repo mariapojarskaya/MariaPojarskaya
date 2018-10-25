@@ -11,6 +11,6 @@ public class SelenideTestBase {
     public void beforeSuite(){
         Configuration.browser = "chrome";
         Configuration.screenshots = false;
-        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
     }
 }

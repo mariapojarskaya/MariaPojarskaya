@@ -35,7 +35,7 @@ public class SimpleTestSelenidePageObject extends SelenideTestBase {
     @TmsLink("")
     @Test
     public void simpleTest() {
-        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 
         //Navigate
         homePageSelenide.openPage();
