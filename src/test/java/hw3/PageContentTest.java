@@ -35,6 +35,7 @@ public class PageContentTest extends TestBase {
 
     @AfterMethod
     public void afterMethod() {
+
         driver.close();
     }
 

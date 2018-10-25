@@ -19,6 +19,7 @@ public class HomePage {
     private WebElement mainText;
 
     //================================methods===================================
+
     public void open(WebDriver driver) {
         driver.get("");
     }
@@ -31,6 +32,7 @@ public class HomePage {
     }
 
     //================================checks===================================
+
     public void checkTitle(WebDriver driver) {
         assertEquals(driver, "");
     }

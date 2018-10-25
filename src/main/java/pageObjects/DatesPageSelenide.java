@@ -41,6 +41,7 @@ public class DatesPageSelenide {
     private SelenideElement slider = $(By.cssSelector("div.ui-corner-all"));
 
     private ElementsCollection difElLogs = $$(By.cssSelector(".panel-body-list.logs > li"));
+
     //==============================methods==================================
 
     @Step

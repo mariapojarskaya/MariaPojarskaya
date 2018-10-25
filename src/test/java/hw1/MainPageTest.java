@@ -120,5 +120,4 @@ public class MainPageTest {
         //17. Close Browser
         driver.close();
     }
-
 }

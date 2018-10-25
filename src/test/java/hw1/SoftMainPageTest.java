@@ -123,5 +123,4 @@ public class SoftMainPageTest {
         //17. Close Browser
         driver.close();
     }
-
 }

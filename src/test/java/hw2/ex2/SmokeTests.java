@@ -337,5 +337,4 @@ public class SmokeTests {
         //17. Close Browser
         driver.close();
     }
-
 }

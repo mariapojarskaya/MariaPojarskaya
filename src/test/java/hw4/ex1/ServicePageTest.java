@@ -43,7 +43,7 @@ public class ServicePageTest extends SelenideTestBase {
 
         //3. Perform login
         homePageSelenide.login(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password);
-        ;
+
 
         //4. Assert User name in the left-top side of screen that user is loggined
         homePageSelenide.checkLoginTitle(LOGIN_TITLE.title);
