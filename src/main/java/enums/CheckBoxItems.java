@@ -13,7 +13,7 @@ public enum CheckBoxItems {
         displayName = name;
     }
 
-    public static CheckBoxItems getCheckBoxUtems(String displayName) {
+    public static CheckBoxItems getCheckBoxItems(String displayName) {
         if (displayName.equals(WATER.displayName)) {
             return WATER;
         } else if (displayName.equals(EARTH.displayName)) {
