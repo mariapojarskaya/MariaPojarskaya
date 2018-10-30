@@ -33,7 +33,7 @@ public class ServicePageSelenide {
 
     private ElementsCollection Logs = $$(By.cssSelector(".panel-body-list.logs > li"));
 
-    //==============================methods==================================
+    //________________________________METHODS_______________________________
 
     @Step
     public void selectCheckBoxes(int count, String value) {
@@ -71,7 +71,7 @@ public class ServicePageSelenide {
         }
     }
 
-    //==============================checks===================================
+    //______________________________CHECKS_________________________________
 
     @Step
     public void checkTitle() {

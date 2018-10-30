@@ -1,45 +1,50 @@
 package lesson5;
+
 import base.SelenideTestBase;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Flaky;
-import io.qameta.allure.Story;
-import listeners.AllureAttachmentListener;
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.SelenideElement;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pageObjects.HomePageSelenide;
 
-import static com.codeborne.selenide.Selenide.page;
-import static enums.Users.PITER_CHAILOVSKII;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static java.lang.System.setProperty;
+import static org.testng.Assert.assertEquals;
 
-@Feature("Smoke tests")
-@Story("Home Page Testing")
-@Listeners(AllureAttachmentListener.class)
+//import pageObjects.HomePageSelenide;
+
+
 public class SimpleTestSelenidePageObject extends SelenideTestBase {
-
-    private HomePageSelenide homePageSelenide;
 
     @BeforeClass
     public void beforeClass() {
-        homePageSelenide = page(HomePageSelenide.class);
+        //HomePageSelenide homePageSelenide = page(HomePageSelenide.class);
     }
 
-    @Flaky
     @Test
     public void simpleTest() {
-        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+        setProperty("webdriver.chrome.driver","chromedriver.exe");
 
         //2 Navigate
-        homePageSelenide.openPage();
+        open("https://epam.github.io/JDI/index.html");
 
         //3 Assert Title
-        homePageSelenide.checkTitle();
+        assertEquals(getWebDriver().getTitle(), "Home Page");
 
         //4 Login
-        homePageSelenide.login(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password);
+        $(".profile-photo").click();
+        $("[id = 'Name']").sendKeys("epam");
+        $("[id = 'Password']").sendKeys("1234");
+        $(".login [type = 'submit']").click();
 
-        //5 Check main title
-        homePageSelenide.checkTitle();
+        SelenideElement mainTitle = $("h3.main-title");
+        mainTitle.shouldBe(visible);
+        mainTitle.shouldHave(text("EPAM FRAMEWORK WISHES…"));
+
+        //6 Check 4 images
+        $$(".benefit-txt").shouldHaveSize(4);
+        $$(".benefit-txt").shouldBe(CollectionCondition.sizeLessThan(5));
     }
 }

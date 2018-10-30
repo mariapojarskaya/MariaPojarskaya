@@ -1,96 +1,89 @@
 package hw4.ex1;
 
 import base.SelenideTestBase;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-import listeners.AllureAttachmentListener;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.HomePageSelenide;
-import pageObjects.ServicePageSelenide;
+import pageObjects.PageElementsSelenide;
 
 import static com.codeborne.selenide.Selenide.page;
-import static enums.CheckBoxItems.DIF_EL_ITEM_WATER;
-import static enums.CheckBoxItems.DIF_EL_ITEM_WIND;
-import static enums.DropDownItems.DIF_EL_ITEM_YELLOW;
-import static enums.RadioButtonItems.DIF_EL_ITEM_SELEN;
-import static enums.Titles.LOGIN_TITLE;
+import static enums.Urls.HOME_PAGE;
 import static enums.Users.PITER_CHAILOVSKII;
 
-@Feature("Smoke tests")
-@Story("Different Elements Page Testing")
-@Listeners(AllureAttachmentListener.class)
+
 public class ServicePageTest extends SelenideTestBase {
 
-    private HomePageSelenide homePageSelenide;
-    private ServicePageSelenide servicePageSelenide;
+    private HomePageSelenide homePage;
+    private PageElementsSelenide pageElements;
 
     @BeforeClass
     public void beforeClass() {
-        homePageSelenide = page(HomePageSelenide.class);
-        servicePageSelenide = page(ServicePageSelenide.class);
+        homePage = page(HomePageSelenide.class);
+        pageElements = page(PageElementsSelenide.class);
     }
 
     @Test
-    public void simpleTest() {
+    public void servicePageTest() {
 
         //1. Open test site by URL
-        homePageSelenide.openPage();
+        homePage.open(HOME_PAGE.url);
 
         //2. Assert Browser title
-        homePageSelenide.checkTitle();
+        homePage.checkTitle();
 
         //3. Perform login
-        homePageSelenide.login(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password);
-
+        homePage.login(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password);
 
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePageSelenide.checkLoginTitle(LOGIN_TITLE.title);
+        homePage.checkLoggedUserName(PITER_CHAILOVSKII.displayName);
 
         //5. Click on "Service" subcategory in the header and check that drop down contains options
-        homePageSelenide.headServiceButtonRealise();
-        homePageSelenide.checkHeadServiceDropDownContains();
+        //Click
+        homePage.clickOnUpperSelect();
+
+        //Check for content
+        homePage.checkUpperServiceMenuContent();
 
         //6. Click on Service subcategory in the left section and check that drop down contains options
-        homePageSelenide.leftServiceButtonRealise();
-        homePageSelenide.checkLeftServiceDropDownContains();
+        //Click
+        homePage.clickOnLeftSelect();
+        //Check for content
+        homePage.checkLeftServiceMenuContent();
 
         //7. Open through the header menu Service -> Different Elements Page
-        homePageSelenide.headServiceButtonRealise();
-        homePageSelenide.headServiceDifElRealise();
-        servicePageSelenide.checkTitle();
+        homePage.openDifferentElementsPageThroughTheHeaderMenu();
 
         //8. Check interface on Different elements page, it contains all needed elements
-        servicePageSelenide.checkDifElPageExists();
+        pageElements.checkDifferentElementsPageContent();
 
         //9. Assert that there is Right Section
-        servicePageSelenide.checkRightSection();
+        pageElements.checkRightSectionExists();
 
         //10. Assert that there is Left Section
-        servicePageSelenide.checkLeftSection();
+        pageElements.checkLeftSectionExists();
 
         //11. Select checkboxes
-        servicePageSelenide.selectCheckBoxes(DIF_EL_ITEM_WATER.counter, DIF_EL_ITEM_WATER.value);
-        servicePageSelenide.selectCheckBoxes(DIF_EL_ITEM_WIND.counter, DIF_EL_ITEM_WIND.value);
+        pageElements.selectWaterAndWindCheckBoxes();
 
         //12. Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
+        pageElements.checkLoggingOfCheckBoxesChecked();
 
         //13. Select radio
-        servicePageSelenide.selectRadioButton(DIF_EL_ITEM_SELEN.counter, DIF_EL_ITEM_SELEN.value);
+        pageElements.selectSelenRadioButton();
 
         //14. Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton.
+        pageElements.checkLoggingOfRadioButtons();
 
         //15. Select in dropdown
-        servicePageSelenide.selectDropDownButton(DIF_EL_ITEM_YELLOW.counter, DIF_EL_ITEM_YELLOW.value);
+        pageElements.selectYellowFromDropDownMenu();
 
-        //16. Assert that for dropdown there is a log row and value is corresponded to the selected value.
+        //16. Assert that for dropdown there is a log row and value is corresponded to the selected value
+        pageElements.checkLoggingOfDropDownMenu();
 
         //17. Unselect and assert checkboxes
-        servicePageSelenide.selectCheckBoxes(DIF_EL_ITEM_WATER.counter, DIF_EL_ITEM_WATER.value);
-        servicePageSelenide.selectCheckBoxes(DIF_EL_ITEM_WIND.counter, DIF_EL_ITEM_WIND.value);
+        pageElements.unselectWaterAndWindCheckBoxes();
 
-        //18. Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
-
+        //18. Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
+        pageElements.checkLoggingOfCheckBoxesUnchecked();
     }
 }

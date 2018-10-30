@@ -2,16 +2,28 @@ package enums;
 
 public enum CheckBoxItems {
 
-    DIF_EL_ITEM_WATER(0, "Water"),
-    DIF_EL_ITEM_EARTH(1, "Earth"),
-    DIF_EL_ITEM_WIND(2, "Wind"),
-    DIF_EL_ITEM_FIRE(3, "Fire");
+    WATER("Water"),
+    EARTH("Earth"),
+    WIND("Wind"),
+    FIRE("Fire");
 
-    public int counter;
-    public String value;
+    public final String displayName;
 
-    CheckBoxItems(int counter, String value){
-        this.counter = counter;
-        this.value = value;
+    CheckBoxItems(String name) {
+        displayName = name;
+    }
+
+    public static CheckBoxItems getCheckBoxUtems(String displayName) {
+        if (displayName.equals(WATER.displayName)) {
+            return WATER;
+        } else if (displayName.equals(EARTH.displayName)) {
+            return EARTH;
+        } else if (displayName.equals(WIND.displayName)) {
+            return WIND;
+        } else if (displayName.equals(FIRE.displayName)) {
+            return FIRE;
+        } else {
+            throw new UnsupportedOperationException("Enum wasn't found!");
+        }
     }
 }

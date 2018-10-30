@@ -11,8 +11,7 @@ import pageObjects.HomePageSelenide;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
@@ -38,7 +37,7 @@ public class SimpleTestSelenidePageObject extends SelenideTestBase {
         setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 
         //Navigate
-        homePageSelenide.openPage();
+        open("https://epam.github.io/JDI/index.html");
 
         //Assert
         assertEquals(getWebDriver().getTitle(), "Home Page");

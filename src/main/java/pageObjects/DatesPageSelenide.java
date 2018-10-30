@@ -1,94 +1,82 @@
 package pageObjects;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
+import enums.DatesPageSliderTypes;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import utils.ElementsLogHelper;
+import utils.SliderHandler;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static enums.DatesPageSliderTypes.FROM;
+import static enums.DatesPageSliderTypes.TO;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class DatesPageSelenide {
 
-    @FindBy(css = ".profile-photo")
-    private SelenideElement profileButton;
+    //__________________________WEB-ELEMENTS AND CONSTANTS_________________________
+    @FindBy(css = ".ui-slider-handle")
+    ElementsCollection sliders;
 
-    @FindBy(css = "[id = 'Name']")
-    private SelenideElement login;
+    private final ElementsLogHelper LOG_PARSER = new ElementsLogHelper();
+    private final SliderHandler SLIDER_HANDLER = new SliderHandler();
 
-    @FindBy(css = "[id = 'Password']")
-    private SelenideElement password;
 
-    @FindBy(css = "[type = 'submit']")
-    private SelenideElement submit;
+    //________________________________METHODS_______________________________
 
-    @FindBy(css = "div.profile-photo > span")
-    private SelenideElement loginTitle;
 
-    @FindBy(css = ".m-l8 [class = 'dropdown-toggle']")
-    private SelenideElement serviceButton;
-
-    @FindBy(css = ".m-l8 [href = 'dates.html']")
-    private SelenideElement datesButton;
-
-    private ElementsCollection sliderItems = $$(By.cssSelector("a.ui-corner-all"));
-
-    private SelenideElement slider = $(By.cssSelector("div.ui-corner-all"));
-
-    private ElementsCollection difElLogs = $$(By.cssSelector(".panel-body-list.logs > li"));
-
-    //==============================methods==================================
-
-    @Step
-    public void login(String name, String passwd) {
-        profileButton.click();
-        login.sendKeys(name);
-        password.sendKeys(passwd);
-        submit.click();
+    @Step("Set slider's range From 0 To 100")
+    public void setSlidersFrom0To100() {
+        SLIDER_HANDLER.setPosition(sliders.get(0), 0);
+        SLIDER_HANDLER.setPosition(sliders.get(1), 100);
     }
 
-    @Step
-    public void realiseDatesButton() {
-        serviceButton.click();
-        datesButton.click();
+    @Step("Set slider's range From 0 To 0")
+    public void setSlidersFrom0To0() {
+        SLIDER_HANDLER.setPosition(sliders.get(0), 0);
+        SLIDER_HANDLER.setPosition(sliders.get(1), 0);
     }
 
-    @Step
-    public void dragAndDropSlider(int leftValue, int rightValue) {
-        SelenideElement leftSlider = sliderItems.first();
-        setSliderPosition(leftValue, leftSlider);
-        checkSliderLog(leftValue, true);
-        SelenideElement rightSlider = sliderItems.last();
-        setSliderPosition(rightValue, rightSlider);
-        checkSliderLog(rightValue, false);
+    @Step("Set slider's range From 100 To 100")
+    public void setSlidersFrom100To100() {
+        SLIDER_HANDLER.setPosition(sliders.get(1), 100);
+        SLIDER_HANDLER.setPosition(sliders.get(0), 100);
     }
 
-    @Step
-    private void setSliderPosition(Integer position, SelenideElement sliderItem) {
-        double width = (double) slider.getSize().getWidth();
-        Actions act = new Actions(getWebDriver());
-        Double currentPosition = Double.parseDouble(sliderItem.getCssValue("left").replaceAll("px", "")) / (width / 100);
-        int xOffset = (int) ((position - currentPosition - 1) * (width / 100));
-        act.dragAndDropBy(sliderItem, xOffset, 0).build().perform();
+    @Step("Set slider's range From 30 To 70")
+    public void setSlidersFrom30To70() {
+        SLIDER_HANDLER.setPosition(sliders.get(0), 30);
+        SLIDER_HANDLER.setPosition(sliders.get(1), 70);
     }
 
-    //==============================checks===================================
-
-    @Step
-    public void checkTitle() {
-        assertEquals(getWebDriver().getTitle(), "Dates");
+    @Step("Check that slider's setting From 0 to 100 was properly logged")
+    public void checkSlidersAreSetFrom0To100Log() {
+        assertEquals(LOG_PARSER.getActualLogRecord(1, DatesPageSliderTypes.class),
+                LOG_PARSER.generateExpectedRecord(FROM, 0));
+        assertEquals(LOG_PARSER.getActualLogRecord(0, DatesPageSliderTypes.class),
+                LOG_PARSER.generateExpectedRecord(TO, 100));
     }
 
-    @Step
-    private void checkSliderLog(int position, boolean value) {
-        String lastLogText = difElLogs.first().getText();
-        String nameSlider = value ? "From" : "To";
-        assertTrue(lastLogText.contains(nameSlider));
-        assertTrue(lastLogText.contains(String.valueOf(position)));
+    @Step("Check that slider's setting From 0 to 0 was properly logged")
+    public void checkSlidersAreSetFrom0To0Log() {
+        assertEquals(LOG_PARSER.getActualLogRecord(1, DatesPageSliderTypes.class),
+                LOG_PARSER.generateExpectedRecord(FROM, 0));
+        assertEquals(LOG_PARSER.getActualLogRecord(0, DatesPageSliderTypes.class),
+                LOG_PARSER.generateExpectedRecord(TO, 0));
+    }
+
+    @Step("Check that slider's setting From 100 to 100 was properly logged")
+    public void checkSlidersAreSetFrom100To100Log() {
+        assertEquals(LOG_PARSER.getActualLogRecord(0, DatesPageSliderTypes.class),
+                LOG_PARSER.generateExpectedRecord(FROM, 100));
+        assertEquals(LOG_PARSER.getActualLogRecord(1, DatesPageSliderTypes.class),
+                LOG_PARSER.generateExpectedRecord(TO, 100));
+    }
+
+    @Step("Check that slider's setting From 30 to 70 was properly logged")
+    public void checkSlidersAreSetFrom30To70Log() {
+        assertEquals(LOG_PARSER.getActualLogRecord(1, DatesPageSliderTypes.class),
+                LOG_PARSER.generateExpectedRecord(FROM, 30));
+        assertEquals(LOG_PARSER.getActualLogRecord(0, DatesPageSliderTypes.class),
+                LOG_PARSER.generateExpectedRecord(TO, 70));
     }
 }
