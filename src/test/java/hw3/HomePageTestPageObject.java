@@ -28,12 +28,12 @@ public class HomePageTestPageObject extends TestBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 
     @AfterMethod
     public void afterMethod() {
+
         driver.close();
     }
 
@@ -42,8 +42,6 @@ public class HomePageTestPageObject extends TestBase {
     public void homePageTestPageObject() {
 
         //1. Open test site by URL
-        //WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.navigate().to("https://epam.github.io/JDI/");
 
         //2. Assert Browser title

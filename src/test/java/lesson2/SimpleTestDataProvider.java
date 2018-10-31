@@ -19,7 +19,7 @@ public class SimpleTestDataProvider extends TestBase {
 
         //1 Open BR
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
         //2 Navigate

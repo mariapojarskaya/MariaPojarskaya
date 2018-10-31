@@ -19,7 +19,7 @@ public class DataProviderAssertingTests extends TestBase {
     public void checkTextWithImagesOnTheIndexPage(int textNum, String textExpected) {
 
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
         //1. Open test site by URL

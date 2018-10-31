@@ -13,7 +13,7 @@ import static org.testng.Assert.assertTrue;
 
 public class HomePage {
 
-    //__________________________WEB-ELEMENTS AND CONSTANTS_________________________
+    //WEB-ELEMENTS AND CONSTANTS
 
     @FindBy(css = ".profile-photo")
     private WebElement profileButton;
@@ -81,9 +81,10 @@ public class HomePage {
 
     private final String EXPECTED_DEFAULT_HEADER_TEXT = "JDI GITHUB";
 
-    //________________________________METHODS_______________________________
+    //METHODS
 
     public void open(WebDriver driver) {
+
         driver.get(Urls.HOME_PAGE.url);
     }
 
@@ -98,7 +99,7 @@ public class HomePage {
         driver.switchTo().defaultContent();
     }
 
-    //_______________________________CHECKS_________________________________
+    //CHECKS
 
     public void checkTitle(WebDriver driver) {
         assertEquals(driver.getTitle(), EXPECTED_HOME_PAGE_TITLE);
@@ -147,6 +148,7 @@ public class HomePage {
     }
 
     public void checkIframeIsDisplayed() {
+
         assertTrue(iFrameElement.isDisplayed());
     }
 
@@ -166,10 +168,12 @@ public class HomePage {
     }
 
     public void checkLeftSideBarIsDisplayed() {
+
         assertTrue(navSideBarElement.isDisplayed());
     }
 
     public void checkFooterIsDisplayed() {
+
         assertTrue(footerElement.isDisplayed());
     }
 }

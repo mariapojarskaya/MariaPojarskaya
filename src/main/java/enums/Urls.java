@@ -10,8 +10,13 @@ public enum Urls {
 
 
     public String url;
+    public String getUrl(){
+        return url;
+    }
 
     Urls(String link) {
+
         url = link;
     }
+
 }

@@ -29,7 +29,7 @@ public class SimpleTestPageObject extends TestBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 

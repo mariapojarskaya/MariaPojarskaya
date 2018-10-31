@@ -2,6 +2,11 @@ package enums;
 
 public enum Titles {
 
+    FIRST_HEADER_ITEM("HOME"),
+    SECOND_HEADER_ITEM("CONTACT FORM"),
+    THIRD_HEADER_ITEM("SERVICE"),
+    FOURTH_HEADER_ITEM("METALS & COLORS"),
+
     FIRST_IMAGE_TITLE(
             "To include good practices\n" +
                     "and ideas from successful\n" +
@@ -33,48 +38,10 @@ public enum Titles {
 
     HOME_PAGE_TITLE("Home Page"),
 
-    FIRST_HEADER_ITEM_TITLE("HOME"),
 
-    SECOND_HEADER_ITEM_TITLE("CONTACT FORM"),
+    DATES_PAGE_TITLE("Dates"),
 
-    THIRD_HEADER_ITEM_TITLE("SERVICE"),
-
-    FOURTH_HEADER_ITEM_TITLE("METALS & COLORS"),
-
-    SUBHEADER_LINK("https://github.com/epam/JDI"),
-
-    FIRST_SERVICE_HEADER("SUPPORT"),
-
-    SECOND_SERVICE_HEADER("DATES"),
-
-    THIRD_SERVICE_HEADER("COMPLEX TABLE"),
-
-    FOURTH_SERVICE_HEADER("SIMPLE TABLE"),
-
-    FIFTH_SERVICE_HEADER("USER TABLE"),
-
-    SIXTH_SERVICE_HEADER("TABLE WITH PAGES"),
-
-    SEVENTH_SERVICE_HEADER("DIFFERENT ELEMENTS"),
-
-    EIGHTH_SERVICE_HEADER("PERFORMANCE"),
-
-    FIRST_SERVICE_LEFTER("Support"),
-
-    SECOND_SERVICE_LEFTER("Dates"),
-
-    THIRD_SERVICE_LEFTER("Complex Table"),
-
-    FOURTH_SERVICE_LEFTER("Simple Table"),
-
-    FIFTH_SERVICE_LEFTER("User Table"),
-
-    SIXTH_SERVICE_LEFTER("Table with pages"),
-
-    SEVENTH_SERVICE_LEFTER("Different elements"),
-
-    EIGHTH_SERVICE_LEFTER("Performance"),
-
+    USER_TABLE_PAGE_TITLE("User Table"),
     DIFEL_PAGE_TITLE("Different Elements");
 
     public String title;
@@ -83,4 +50,8 @@ public enum Titles {
 
         this.title = title;
     }
+
+    public String getTitle() {
+        return title;}
+
 }

@@ -22,7 +22,7 @@ public class SmokeAndRegressionTestsSimultaneously {
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.navigate().to("https://epam.github.io/JDI/");
 
         //2. Assert Browser title
@@ -130,7 +130,7 @@ public class SmokeAndRegressionTestsSimultaneously {
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.navigate().to("https://epam.github.io/JDI/");
 
         //2. Assert Browser title
@@ -238,7 +238,7 @@ public class SmokeAndRegressionTestsSimultaneously {
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.navigate().to("https://epam.github.io/JDI/");
 
         //2. Assert Browser title

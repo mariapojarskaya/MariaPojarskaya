@@ -6,6 +6,7 @@ public enum Users {
     public String login;
     public String password;
     public String displayName;
+    public String title;
 
     Users(String login, String password, String displayName) {
         this.login = login;

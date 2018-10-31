@@ -29,7 +29,6 @@ public class TestWithAnnotations extends TestBase {
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
-        driver.manage().window().maximize();
     }
 
     @AfterMethod
@@ -44,7 +43,6 @@ public class TestWithAnnotations extends TestBase {
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.navigate().to("https://epam.github.io/JDI/");
 
         //2. Assert Browser title

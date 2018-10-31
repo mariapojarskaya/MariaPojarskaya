@@ -8,6 +8,8 @@ public enum RadioButtonItems {
     SELEN("Selen");
 
     public String displayName;
+    public int counter;
+    public String value;
 
     RadioButtonItems(String name){
         displayName = name;

@@ -91,6 +91,20 @@
             <version>3.0.2</version>
         </dependency>
 
+        <!--JDI-->
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-uitest-web</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
+        <!--Allure-->
+        <dependency>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-testng-adaptor</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
     </dependencies>
 
     <build>

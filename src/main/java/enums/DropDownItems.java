@@ -8,6 +8,8 @@ public enum DropDownItems {
     RED("Red");
 
     public String displayName;
+    public int counter;
+    public String value;
 
     DropDownItems(String name){
         displayName = name;
