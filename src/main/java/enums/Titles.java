@@ -35,7 +35,7 @@ public enum Titles {
     LOGIN_TITLE("PITER CHAILOVSKII"),
     SUBHEADER_LINK("https://github.com/epam/JDI"),
 
-    DIFEL_PAGE_TITLE("Different Elements"),
+    DIFFERENT_ELEMENTS_TITLE("Different Elements"),
 
     USER_TABLE_PAGE_TITLE("User Table");
 

@@ -1,6 +1,6 @@
 package hw4.ex2;
 
-import base.SelenideTestBase;
+import base.hw4.SelenideTestBase;
 import enums.Titles;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
