@@ -1,6 +1,7 @@
 package hw4.ex2;
 
 import base.SelenideTestBase;
+import enums.Titles;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import listeners.AllureAttachmentListener;
@@ -43,7 +44,7 @@ public class DatesPageTest extends SelenideTestBase {
         homePageSelenide.login(PITER_CHALOVSKII);
 
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePageSelenide.checkLoginTitle(PITER_CHALOVSKII);
+        homePageSelenide.checkLoginTitle(Titles.LOGIN_TITLE);
 
         //5. Open through the header menu Service -> Dates Page
         homePageSelenide.datesButtonClick();

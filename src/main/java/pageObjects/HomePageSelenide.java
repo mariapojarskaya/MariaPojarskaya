@@ -2,6 +2,7 @@ package pageObjects;
 
 
 import com.codeborne.selenide.SelenideElement;
+import enums.Titles;
 import enums.Users;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
@@ -105,12 +106,12 @@ public class HomePageSelenide {
     }
 
     @Step
-    public void checkLoginTitle(Users user) {
+    public void checkLoginTitle(Titles user) {
         loginTitle.shouldHave(text(user.title));
     }
 
     @Step
-    public void checkServiceDropDownContains() {
+    public void checkServiceDropDownContains(boolean b) {
         if (isHeader) {
             checkDropDownContains(headerServiceItems);
         } else {

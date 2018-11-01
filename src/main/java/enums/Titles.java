@@ -32,13 +32,14 @@ public enum Titles {
 
     HOME_PAGE_TITLE("Home Page"),
 
+    LOGIN_TITLE("PITER CHAILOVSKII"),
     SUBHEADER_LINK("https://github.com/epam/JDI"),
 
     DIFEL_PAGE_TITLE("Different Elements"),
 
     USER_TABLE_PAGE_TITLE("User Table");
 
-    private String title;
+    public String title;
 
     Titles(String title) {
         this.title = title;
