@@ -25,6 +25,4 @@ public class HomePage {
         password.sendKeys(passwd);
         submit.click();
     }
-
-
 }

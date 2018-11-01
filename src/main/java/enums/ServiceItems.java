@@ -14,13 +14,8 @@ public enum ServiceItems {
     PERFORMANCE("Performance");
 
 
-
     public String description;
 
-//    public String getTitle() {
-//
-////        return serviceItemTitle;
-//    }
 
     ServiceItems(String description) {
 

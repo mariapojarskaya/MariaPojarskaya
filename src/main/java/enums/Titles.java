@@ -33,6 +33,7 @@ public enum Titles {
     HOME_PAGE_TITLE("Home Page"),
 
     LOGIN_TITLE("PITER CHAILOVSKII"),
+
     SUBHEADER_LINK("https://github.com/epam/JDI"),
 
     DIFFERENT_ELEMENTS_TITLE("Different Elements"),
