@@ -1,31 +1,16 @@
 package enums;
 
 public enum DropDownItems {
+    RED(0, "Red"),
+    GREEN(1, "Green"),
+    BLUE(2, "Blue"),
+    YELLOW(3, "Yellow");
 
-    YELLOW("Yellow"),
-    BLUE("Blue"),
-    GREEN("Green"),
-    RED("Red");
-
-    public String displayName;
     public int counter;
     public String value;
 
-    DropDownItems(String name){
-        displayName = name;
-    }
-
-    public static DropDownItems getDropDownItems(String displayName) {
-        if (displayName.equals(YELLOW.displayName)) {
-            return YELLOW;
-        } else if (displayName.equals(BLUE.displayName)) {
-            return BLUE;
-        } else if (displayName.equals(GREEN.displayName)) {
-            return GREEN;
-        } else if (displayName.equals(RED.displayName)) {
-            return RED;
-        } else {
-            throw new UnsupportedOperationException("Enum wasn't found!");
-        }
+    DropDownItems(int counter, String value) {
+        this.counter = counter;
+        this.value = value;
     }
 }

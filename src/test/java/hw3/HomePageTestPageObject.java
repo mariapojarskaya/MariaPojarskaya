@@ -8,22 +8,22 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageObjects.HomePage;
+import pageObjects.HomePageSelenium;
 
 import java.util.concurrent.TimeUnit;
 
-import static enums.Users.PITER_CHAILOVSKII;
-import static org.testng.Assert.assertEquals;
+import static enums.Titles.*;
+import static enums.Users.PITER_CHALOVSKII;
 
 public class HomePageTestPageObject extends TestBase {
 
     private WebDriver driver;
-    private HomePage homePage;
+    private HomePageSelenium homePageSelenium;
 
     @BeforeClass
     public void beforeClass() {
         driver = new ChromeDriver();
-        homePage = PageFactory.initElements(driver, HomePage.class);
+        homePageSelenium = PageFactory.initElements(driver, HomePageSelenium.class);
     }
 
     @BeforeMethod
@@ -33,60 +33,61 @@ public class HomePageTestPageObject extends TestBase {
 
     @AfterMethod
     public void afterMethod() {
-
         driver.close();
     }
 
-
     @Test
-    public void homePageTestPageObject() {
+    public void homePageTest() {
 
-        //1. Open test site by URL
-        driver.navigate().to("https://epam.github.io/JDI/");
+        //1. Navigate
+        homePageSelenium.open(driver);
 
-        //2. Assert Browser title
-        assertEquals(driver.getTitle(), "Home Page");
+        //2. Assert
+        homePageSelenium.checkTitle(driver, HOME_PAGE_TITLE.getTitle());
 
-        //3. Perform login
-        homePage.login(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password);
+        //3. Login
+        homePageSelenium.login(PITER_CHALOVSKII.login, PITER_CHALOVSKII.password);
 
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePage.checkLoggedUserName(PITER_CHAILOVSKII.displayName);
+        homePageSelenium.checkLoginTitle(PITER_CHALOVSKII.title);
 
         //5. Assert Browser title
-        homePage.checkTitle(driver);
+        homePageSelenium.checkTitle(driver, HOME_PAGE_TITLE.getTitle());
 
         //6. Assert that there are 4 items on the header section are displayed and they have proper texts
-        homePage.checkUpperToolbarButtons();
+
+        homePageSelenium.checkHeaderItemText();
 
         //7. Assert that there are 4 images on the Index Page and they are displayed
-        homePage.checkBenefitIcons();
+        homePageSelenium.checkIndexPageImages();
 
         //8. Assert that there are 4 texts on the Index Page under icons and they have proper text
-        homePage.checkBenefitTexts();
+        homePageSelenium.checkImageTitles();
 
         //9. Assert a text of the main header
-        homePage.checkMainHeaderText();
+        homePageSelenium.checkMainHeaderText(MAIN_HEADER_TITLE.getTitle(),
+                MAIN_HEADER_TEXT.getTitle());
 
         //10. Assert that there is the iframe in the center of page
-        homePage.checkIframeIsDisplayed();
+        homePageSelenium.checkFrameDisplaying();
 
         //11. Switch to the iframe and check that there is Epam logo in the left top conner of iframe
-        homePage.checkEpamLogoInIframe(driver);
+        homePageSelenium.switchToMainFrame(driver);
+        homePageSelenium.checkFrameLogo(driver);
 
         //12. Switch to original window back
-        homePage.switchBackToOriginalWindow(driver);
+        homePageSelenium.switchToParentFrame(driver);
 
         //13. Assert a text of the sub header
-        homePage.checkSubHeaderText();
+        homePageSelenium.checkSubHeaderDisplaying();
 
         //14. Assert that JDI GITHUB is a link and has a proper URL
-        homePage.checkJdiLink();
+        homePageSelenium.checkSubHeaderLink(SUBHEADER_LINK.getTitle());
 
         //15. Assert that there is Left Section
-        homePage.checkLeftSideBarIsDisplayed();
+        homePageSelenium.checkLeftSectionDisplaying();
 
         //16. Assert that there is Footer
-        homePage.checkFooterIsDisplayed();
+        homePageSelenium.checkFooterDisplaying();
     }
 }

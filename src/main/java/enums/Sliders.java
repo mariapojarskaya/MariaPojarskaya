@@ -7,7 +7,7 @@ public enum Sliders {
     public boolean leftSide;
     public boolean rightSide;
 
-    Sliders(boolean leftSide, boolean rightside){
+    Sliders(boolean leftSide, boolean rightside) {
         this.leftSide = leftSide;
         this.rightSide = rightside;
     }

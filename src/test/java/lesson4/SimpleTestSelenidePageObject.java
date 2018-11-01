@@ -7,7 +7,7 @@ import listeners.AllureAttachmentListener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pageObjects.hw4.HomePageSelenide;
+import pageObjects.HomePageSelenide;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;

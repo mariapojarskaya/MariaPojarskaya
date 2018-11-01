@@ -15,6 +15,7 @@ public class TestBase {
         setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 
     }
+
     //src\main\resources\chromedriver.exe
     @AfterSuite(alwaysRun = true)
     public void afterSuite() {

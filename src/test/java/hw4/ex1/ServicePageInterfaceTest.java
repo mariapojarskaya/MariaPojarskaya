@@ -7,92 +7,94 @@ import listeners.AllureAttachmentListener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pageObjects.hw4.DifferentElementsPageSelenide;
-import pageObjects.hw4.HomePageSelenide;
+import pageObjects.DifferentElementsPageSelenide;
+import pageObjects.HomePageSelenide;
 
 import static com.codeborne.selenide.Selenide.page;
 import static enums.CheckBoxItems.WATER;
 import static enums.CheckBoxItems.WIND;
 import static enums.DropDownItems.YELLOW;
 import static enums.RadioButtonItems.SELEN;
-import static enums.Users.PITER_CHAILOVSKII;
+import static enums.Users.PITER_CHALOVSKII;
 
 @Feature("Smoke tests")
+
 @Story("Different Elements Page Testing")
+
 @Listeners(AllureAttachmentListener.class)
 
 public class ServicePageInterfaceTest extends SelenideTestBase {
 
-    private HomePageSelenide homePage;
-    private DifferentElementsPageSelenide differentElementsPage;
+    private HomePageSelenide homePageSelenide;
+    private DifferentElementsPageSelenide differentElementsPageSelenide;
 
     @BeforeClass
     public void beforeClass() {
-        homePage = page(HomePageSelenide.class);
-        differentElementsPage = page(DifferentElementsPageSelenide.class);
+        homePageSelenide = page(HomePageSelenide.class);
+        differentElementsPageSelenide = page(DifferentElementsPageSelenide.class);
     }
 
     @Test
-    public void ServicePageInterfaceTest() {
+    public void differentElementsPageTest() {
 
         //1. Open test site by URL
-        homePage.openPage();
+        homePageSelenide.openPage();
 
         //2. Assert Browser title
-        homePage.checkTitle();
+        homePageSelenide.checkTitle();
 
         //3. Perform login
-        homePage.login(PITER_CHAILOVSKII);
+        homePageSelenide.login(PITER_CHALOVSKII);
 
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePage.checkLoginTitle(PITER_CHAILOVSKII);
+        homePageSelenide.checkLoginTitle(PITER_CHALOVSKII);
 
         //5. Click on "Service" subcategory in the header and check that drop down contains options
-        homePage.ServiceButtonClick();
-        homePage.checkServiceDropDownContains();
+        homePageSelenide.headServiceButtonClick();
+        homePageSelenide.checkServiceDropDownContains();
 
         //6. Click on Service subcategory in the left section and check that drop down contains options
-        homePage.leftServiceButtonClick();
-        homePage.checkServiceDropDownContains();
+        homePageSelenide.leftServiceButtonClick();
+        homePageSelenide.checkServiceDropDownContains();
 
         //7. Open through the header menu Service -> Different Elements Page
-        homePage.ServiceButtonClick();
-        homePage.differentElementsButtonClick();
-        differentElementsPage.checkTitle();
+        homePageSelenide.headServiceButtonClick();
+        homePageSelenide.differentElementsButtonClick();
+        differentElementsPageSelenide.checkTitle();
 
         //8. Check interface on Different elements page, it contains all needed elements
-        differentElementsPage.checkDifElPageExists();
+        differentElementsPageSelenide.checkDifElPageExists();
 
         //9. Assert that there is Right Section
-        differentElementsPage.checkRightSection();
+        differentElementsPageSelenide.checkRightSection();
 
         //10. Assert that there is Left Section
-        differentElementsPage.checkLeftSection();
+        differentElementsPageSelenide.checkLeftSection();
 
         //11. Select checkboxes
-        differentElementsPage.selectCheckBoxes(WATER);
-        differentElementsPage.selectCheckBoxes(WIND);
+        differentElementsPageSelenide.selectCheckBoxes(WATER);
+        differentElementsPageSelenide.selectCheckBoxes(WIND);
 
-        //12. Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox. 
-        differentElementsPage.checkCheckBoxesLogs(WIND, WATER);
+        //12. Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
+        differentElementsPageSelenide.checkCheckBoxesLogs(WIND, WATER);
 
         //13. Select radio
-        differentElementsPage.selectRadioButton(SELEN);
+        differentElementsPageSelenide.selectRadioButton(SELEN);
 
-        //14. Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton. 
-        differentElementsPage.checkRadioButtonLog(SELEN);
+        //14. Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton.
+        differentElementsPageSelenide.checkRadioButtonLog(SELEN);
 
         //15. Select in dropdown
-        differentElementsPage.selectDropDownButton(YELLOW);
+        differentElementsPageSelenide.selectDropDownButton(YELLOW);
 
         //16. Assert that for dropdown there is a log row and value is corresponded to the selected value.
-        differentElementsPage.checkDropDownLog(YELLOW);
+        differentElementsPageSelenide.checkDropDownLog(YELLOW);
 
         //17. Unselect and assert checkboxes
-        differentElementsPage.selectCheckBoxes(WATER);
-        differentElementsPage.selectCheckBoxes(WIND);
+        differentElementsPageSelenide.selectCheckBoxes(WATER);
+        differentElementsPageSelenide.selectCheckBoxes(WIND);
 
-        //18. Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox. 
-        differentElementsPage.checkCheckBoxesLogs(WIND, WATER);
+        //18. Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
+        differentElementsPageSelenide.checkCheckBoxesLogs(WIND, WATER);
     }
 }

@@ -2,30 +2,16 @@ package enums;
 
 public enum RadioButtonItems {
 
-    GOLD("Gold"),
-    SILVER("Silver"),
-    BRONZE("Bronze"),
-    SELEN("Selen");
+    GOLD(0, "Gold"),
+    SILVER(1, "Silver"),
+    BRONZE(2, "Bronze"),
+    SELEN(3, "Selen");
 
-    public String displayName;
     public int counter;
     public String value;
 
-    RadioButtonItems(String name){
-        displayName = name;
-    }
-
-    public static RadioButtonItems getRadioButtonItems(String displayName) {
-        if (displayName.equals(GOLD.displayName)) {
-            return GOLD;
-        } else if (displayName.equals(SILVER.displayName)) {
-            return SILVER;
-        } else if (displayName.equals(BRONZE.displayName)) {
-            return BRONZE;
-        } else if (displayName.equals(SELEN.displayName)) {
-            return SELEN;
-        } else {
-            throw new UnsupportedOperationException("Enum wasn't found!");
-        }
+    RadioButtonItems(int counter, String value) {
+        this.counter = counter;
+        this.value = value;
     }
 }

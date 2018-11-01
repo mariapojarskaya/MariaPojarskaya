@@ -2,21 +2,15 @@ package enums;
 
 public enum Urls {
 
-    HOME_PAGE("https://epam.github.io/JDI/index.html"),
-    JDI_GITHUB_PAGE("https://github.com/epam/JDI"),
-    DIFFERENT_ELEMENTS_PAGE("https://epam.github.io/JDI/different-elements.html"),
-    DATES_PAGE("https://epam.github.io/JDI/dates.html"),
-    USER_TABLE_PAGE("https://epam.github.io/JDI/user-table.html");
+    HOME_PAGE_URL("https://epam.github.io/JDI/index.html");
 
+    private String url;
 
-    public String url;
-    public String getUrl(){
+    public String getUrl() {
         return url;
     }
 
-    Urls(String link) {
-
-        url = link;
+    Urls(String url) {
+        this.url = url;
     }
-
 }

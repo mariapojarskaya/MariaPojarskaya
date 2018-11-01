@@ -230,7 +230,7 @@ public class SmokeAndRegressionTests {
         driver.close();
     }
 
-    @Test(groups = { "Regression"})
+    @Test(groups = {"Regression"})
     public void mainPageTestSR3() {
 
         setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
