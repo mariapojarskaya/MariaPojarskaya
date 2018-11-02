@@ -2,8 +2,8 @@ package pageObjects;
 
 
 import com.codeborne.selenide.SelenideElement;
-import enums.Titles;
 import enums.Users;
+import enums.mainPage.Titles;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,8 +15,8 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static enums.ServiceItems.getServiceItemTitles;
 import static enums.ServiceItems.values;
-import static enums.Titles.HOME_PAGE_TITLE;
 import static enums.Urls.HOME_PAGE_URL;
+import static enums.mainPage.Titles.HOME_PAGE_TITLE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 

@@ -1,7 +1,7 @@
 package hw4.ex1;
 
 import base.hw4.SelenideTestBase;
-import enums.Titles;
+import enums.mainPage.Titles;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import listeners.AllureAttachmentListener;

@@ -12,8 +12,9 @@ import pageObjects.HomePageSelenium;
 
 import java.util.concurrent.TimeUnit;
 
-import static enums.Titles.*;
 import static enums.Users.PITER_CHALOVSKII;
+import static enums.mainPage.Titles.HOME_PAGE_TITLE;
+import static enums.mainPage.Titles.SUBHEADER_LINK;
 
 public class HomePageTestPageObject extends TestBase {
 
@@ -55,18 +56,16 @@ public class HomePageTestPageObject extends TestBase {
         homePageSelenium.checkTitle(driver, HOME_PAGE_TITLE.getTitle());
 
         //6. Assert that there are 4 items on the header section are displayed and they have proper texts
-
         homePageSelenium.checkHeaderItemText();
 
         //7. Assert that there are 4 images on the Index Page and they are displayed
-        homePageSelenium.checkIndexPageImages();
+        homePageSelenium.checkIcons();
 
         //8. Assert that there are 4 texts on the Index Page under icons and they have proper text
         homePageSelenium.checkImageTitles();
 
         //9. Assert a text of the main header
-        homePageSelenium.checkMainHeaderText(MAIN_HEADER_TITLE.getTitle(),
-                MAIN_HEADER_TEXT.getTitle());
+        homePageSelenium.checkMainHeaderText();
 
         //10. Assert that there is the iframe in the center of page
         homePageSelenium.checkFrameDisplaying();

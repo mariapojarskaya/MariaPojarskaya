@@ -15,8 +15,8 @@ import static enums.CheckBoxItems.WATER;
 import static enums.CheckBoxItems.WIND;
 import static enums.DropDownItems.YELLOW;
 import static enums.RadioButtonItems.SELEN;
-import static enums.Titles.LOGIN_TITLE;
 import static enums.Users.PITER_CHALOVSKII;
+import static enums.mainPage.Titles.LOGIN_TITLE;
 
 @Feature("Smoke tests")
 @Story("Different Elements Page Testing")

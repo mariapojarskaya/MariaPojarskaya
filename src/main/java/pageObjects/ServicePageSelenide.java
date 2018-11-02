@@ -10,7 +10,7 @@ import java.util.List;
 import static com.codeborne.selenide.Condition.selected;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static enums.Titles.DIFFERENT_ELEMENTS_TITLE;
+import static enums.mainPage.Titles.DIFFERENT_ELEMENTS_TITLE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 

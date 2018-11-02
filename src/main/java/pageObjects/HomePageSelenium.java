@@ -1,17 +1,17 @@
 package pageObjects;
 
+import enums.mainPage.Items;
+import enums.mainPage.Texts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import static enums.Titles.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+
 
 public class HomePageSelenium {
 
@@ -34,7 +34,7 @@ public class HomePageSelenium {
     private List<WebElement> headerItems;
 
     @FindBy(css = "div.benefit-icon > span")
-    private List<WebElement> testedImages;
+    private List<WebElement> icons;
 
     @FindBy(css = "div.benefit > span")
     private List<WebElement> imageTitles;
@@ -43,7 +43,7 @@ public class HomePageSelenium {
     private WebElement mainTitle;
 
     @FindBy(css = "p.main-txt")
-    private WebElement mainTxt;
+    private WebElement mainText;
 
     @FindBy(css = "iframe")
     private WebElement mainFrame;
@@ -89,47 +89,39 @@ public class HomePageSelenium {
     }
 
     public void checkHeaderItemText() {
-        ArrayList<String> expectedTitles = new ArrayList<>();
-        expectedTitles.add(FIRST_HEADER_ITEM.getTitle());
-        expectedTitles.add(SECOND_HEADER_ITEM.getTitle());
-        expectedTitles.add(THIRD_HEADER_ITEM.getTitle());
-        expectedTitles.add(FOURTH_HEADER_ITEM.getTitle());
-
-        assertEquals(headerItems.size(), expectedTitles.size());
-        Iterator<WebElement> headerItem = headerItems.iterator();
-        Iterator<String> itemText = expectedTitles.iterator();
-        while (headerItem.hasNext() && itemText.hasNext()) {
-            assertEquals(headerItem.next().getText(), itemText.next());
+        List<String> content = Items.getList();
+        assertEquals(headerItems.size(), 4);
+        for (WebElement item : headerItems) {
+            assertTrue(content.contains(item.getText()));
         }
     }
 
-    public void checkIndexPageImages() {
-        for (WebElement image : testedImages) {
-            assertTrue(image.isDisplayed());
+    public void checkIcons() {
+        assertEquals(icons.size(), 4);
+        for (WebElement element : icons) {
+            assertTrue(element.isDisplayed());
         }
     }
 
     public void checkImageTitles() {
-        ArrayList<String> expectedImageTitles = new ArrayList<>();
-        expectedImageTitles.add(FIRST_IMAGE_TITLE.getTitle());
-        expectedImageTitles.add(SECOND_IMAGE_TITLE.getTitle());
-        expectedImageTitles.add(THIRD_IMAGE_TITLE.getTitle());
-        expectedImageTitles.add(FOURTH_IMAGE_TITLE.getTitle());
-
-        assertEquals(imageTitles.size(), expectedImageTitles.size());
-        Iterator<WebElement> headerItem = imageTitles.iterator();
-        Iterator<String> itemText = expectedImageTitles.iterator();
-        while (headerItem.hasNext() && itemText.hasNext()) {
-            assertEquals(headerItem.next().getText(), itemText.next());
+        assertEquals(imageTitles.size(), 4);
+        for (WebElement image : imageTitles) {
+            assertTrue(image.isDisplayed());
         }
     }
 
-    public void checkMainHeaderText(String Title, String Text) {
-        assertEquals(mainTitle.getText(), Title);
-        assertEquals(mainTxt.getText(), Text);
+    public void checkMainHeaderText() {
+        //check title in main header
+        assertTrue(mainTitle.isDisplayed());
+        assertEquals(Texts.MAIN_HEADER_TITLE.text, mainTitle.getText());
+
+        //check text in main header
+        assertTrue(mainText.isDisplayed());
+        assertEquals(Texts.MAIN_HEADER_TEXT.text, mainText.getText());
     }
 
     public void checkFrameDisplaying() {
+
         assertTrue(mainFrame.isDisplayed());
     }
 
@@ -139,18 +131,24 @@ public class HomePageSelenium {
     }
 
     public void checkSubHeaderDisplaying() {
+
         assertTrue(subHeader.isDisplayed());
     }
 
     public void checkSubHeaderLink(String link) {
+
         assertEquals(subHeader.getAttribute("href"), link);
     }
 
     public void checkLeftSectionDisplaying() {
+
         assertTrue(leftSection.isDisplayed());
     }
 
     public void checkFooterDisplaying() {
+
         assertTrue(footer.isDisplayed());
+
     }
+
 }
