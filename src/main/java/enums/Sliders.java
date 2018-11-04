@@ -2,13 +2,11 @@ package enums;
 
 public enum Sliders {
 
-    SLIDER(true, false);
+    FROM("From"), TO("To");
 
-    public boolean leftSide;
-    public boolean rightSide;
+    public String name;
 
-    Sliders(boolean leftSide, boolean rightside) {
-        this.leftSide = leftSide;
-        this.rightSide = rightside;
+    Sliders(String name) {
+        this.name = name;
     }
 }

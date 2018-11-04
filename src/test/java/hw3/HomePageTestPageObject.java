@@ -12,7 +12,7 @@ import pageObjects.HomePageSelenium;
 
 import java.util.concurrent.TimeUnit;
 
-import static enums.Users.PITER_CHALOVSKII;
+import static enums.Users.PITER_CHAILOVSKII;
 import static enums.mainPage.Titles.HOME_PAGE_TITLE;
 import static enums.mainPage.Titles.SUBHEADER_LINK;
 
@@ -47,10 +47,10 @@ public class HomePageTestPageObject extends TestBase {
         homePageSelenium.checkTitle(driver, HOME_PAGE_TITLE.getTitle());
 
         //3. Login
-        homePageSelenium.login(PITER_CHALOVSKII.login, PITER_CHALOVSKII.password);
+        homePageSelenium.login(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password);
 
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePageSelenium.checkLoginTitle(PITER_CHALOVSKII.title);
+        homePageSelenium.checkLoginTitle(PITER_CHAILOVSKII.username);
 
         //5. Assert Browser title
         homePageSelenium.checkTitle(driver, HOME_PAGE_TITLE.getTitle());
