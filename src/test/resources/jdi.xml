@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="WINDOWS-1251"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test suite" parallel="methods" thread-count="1">
-    <test name="Tests" preserve-order="true">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Test Suite" verbose="1">
+    <test name="Simple Test">
+
         <classes>
-            <class name="hw8.SimpleJDITest"/>
+            <class name="hw8.MetalsAndColorsPageTest"/>
         </classes>
     </test>
 </suite>
