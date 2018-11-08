@@ -1,20 +1,17 @@
 package JDI.enums;
 
+
 public enum HeaderMenu {
+    HOME("Home"), CONTACT_FORM("Contact Form"), SERVICE("Service"), METALS_COLORS("Metals & Colors");
 
-    HOME("HOME"),
-    CONTACT_FORM("CONTACT FORM"),
-    SERVICE("SERVICE"),
-    METALS_AND_COLORS("METALS & COLORS");
+    private String name;
 
-    public String description;
-
-    HeaderMenu(String descr) {
-        this.description = descr;
+    HeaderMenu(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return description;
+        return name.toUpperCase();
     }
 }

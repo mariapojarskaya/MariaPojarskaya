@@ -1,39 +1,39 @@
 package hw8;
 
+import JDI.base.JDITestBase;
 import JDI.dataProviders.DataProviders;
-import JDI.entities.User;
-import JDI.utils.MetalsAndColorsPageData;
+import JDI.entities.MetalsColorsData;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-import static JDI.JDISite.*;
-import static com.epam.web.matcher.testng.Assert.areEquals;
+import static JDI.JDISite.homePage;
+import static JDI.JDISite.metalsAndColorsPage;
+import static JDI.enums.HeaderMenu.METALS_COLORS;
+import static JDI.enums.Users.PITER_CHAILOVSKII;
+
+public class MetalsAndColorsPageTest extends JDITestBase {
+
+    @AfterMethod(alwaysRun = true)
+    public void afterMethod() {
+        homePage.clearCache();
+    }
 
 
-public class MetalsAndColorsPageTest extends SimpleJDITest {
+    @Test(dataProvider = "metalsColorsDataProvider", dataProviderClass = DataProviders.class)
+    public void MetalsAndColorsFormTest(MetalsColorsData data) {
 
-    @Test(dataProvider = "dataProviders", dataProviderClass = DataProviders.class)
-    public void metalsAndColorsTest(MetalsAndColorsPageData data) {
-
+        //1 Login on JDI site as User
         homePage.open();
-
-        //1. Login on JDI site as User
-        login(new User());
+        homePage.login(PITER_CHAILOVSKII);
         homePage.checkOpened();
 
-        // TODO Take a look on IDEA warning
-        //2. Open Metals & Colors page by Header menu
-        metalsAndColorsPage.goToMetalsAndColorsPage();
-        metalsAndColorsPage.checkOpened();
+        //2 Open Metals & Colors page by Header menu
+        homePage.header.menu.select(METALS_COLORS);
 
-        //3. Fill form Metals & Colors by data and submit form Metals & Colors
-        metalsAndColorsPage.fillForm(data);
+        //3 Fill form Metals & Colors by data from DataProvider and submit
+        metalsAndColorsPage.form.submit(data);
 
-        // TODO It is completely essential to have a hi-level method for that rather than low-level cycle...
-        //4. Result sections should contains expected data
-        for (int i = 0; i < metalsAndColorsPage.expectedResult.size(); i++) {
-            areEquals(resultSection.result.getElement(i).getText(), metalsAndColorsPage.expectedResult.get(i));
-        }
-
-        logout();
+        //4 Result sections contains data from DataProvider:
+        metalsAndColorsPage.results.check(data);
     }
 }

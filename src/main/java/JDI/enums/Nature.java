@@ -1,17 +1,19 @@
 package JDI.enums;
 
-public enum Results {
+public enum Nature {
 
-    SUMMARY("Summary"), ELEMENTS("Elements"), COLOR("Color"), METAL("Metal"), VEGETABLES("Vegetables");
+    WATER("Water"), EARTH("Earth"), WIND("Wind"), FIRE("Fire");
 
     public String name;
 
-    Results(String name) {
+    Nature(String name) {
+
         this.name = name;
     }
 
     @Override
     public String toString() {
+
         return name;
     }
 }
