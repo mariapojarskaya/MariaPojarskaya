@@ -1,4 +1,4 @@
-package hw5;
+package hw5.ex1;
 
 import base.hw4.SelenideTestBase;
 import io.qameta.allure.Feature;
