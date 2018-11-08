@@ -10,6 +10,7 @@ public class DataProviders {
 
     @DataProvider
     public Object[][] dataProviders() throws FileNotFoundException {
+        // TODO You going to load file 5 times...
         return new Object[][]{
                 {parseJson().getData_1()},
                 {parseJson().getData_2()},

@@ -11,6 +11,7 @@ public class ParseJson {
     private static String filename = "src/main/resources/JDI_ex8_metalsColorsDataSet.json";
 
     public static Datas parseJson() throws FileNotFoundException {
+        // TODO Take a look on TypeToken
         Gson gson = new Gson();
         JsonReader reader = new JsonReader(new FileReader(filename));
         Datas data = gson.fromJson(reader, Datas.class);

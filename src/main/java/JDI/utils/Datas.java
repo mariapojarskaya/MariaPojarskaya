@@ -1,5 +1,8 @@
 package JDI.utils;
 
+// TODO Naming convention
+// TODO This is completely prohibited to load data in this way,
+// TODO 'cause if file changed(new data set added), you have to change your code...
 public class Datas {
 
     private MetalsAndColorsPageData data_1;

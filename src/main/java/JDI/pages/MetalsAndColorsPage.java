@@ -36,6 +36,7 @@ public class MetalsAndColorsPage extends WebPage {
             list = @FindBy(css = "li"))
     public Dropdown<ColorsDropDown> colorsDropDown;
 
+    // TODO
     @JComboBox(
             root = @FindBy(css = ".metals"),
             value = @FindBy(css = "input"))
