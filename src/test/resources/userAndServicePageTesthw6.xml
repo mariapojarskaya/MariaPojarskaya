@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="H6DifferentElementsAndUserTablePages" verbose="1">
+    <test name="Different Elements And User Table Pages Tests">
+
+        <classes>
+            <class name="runners.CucumberRunner"/>
+        </classes>
+
+    </test>
+</suite>
