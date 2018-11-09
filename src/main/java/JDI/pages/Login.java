@@ -5,7 +5,7 @@ import JDI.enums.Users;
 import JDI.sections.Header;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 
-public abstract class SiteBase extends WebPage {
+public abstract class Login extends WebPage {
 
     public Header header;
 
