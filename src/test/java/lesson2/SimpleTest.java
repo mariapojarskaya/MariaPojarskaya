@@ -19,7 +19,7 @@ public class SimpleTest extends TestBase {
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 

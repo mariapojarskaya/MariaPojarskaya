@@ -10,7 +10,7 @@
         </groups>
 
         <classes>
-            <class name="lesson2.SimpleTest"/>
+            <class name="lesson5.SimpleTestSelenidePageObject"/>
         </classes>
 
     </test>
