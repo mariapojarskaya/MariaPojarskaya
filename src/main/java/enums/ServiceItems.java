@@ -14,6 +14,7 @@ public enum ServiceItems {
     }
 
     public static List<String> getServiceItems() {
+
         return new ArrayList<String>() {{
             add("Support");
             add("Dates");

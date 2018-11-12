@@ -1,10 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="H6DifferentElementsAndUserTablePages" verbose="1">
-    <test name="Different Elements And User Table Pages Tests">
+<suite name="Test Suite" verbose="1">
+    <test name="CucumberTests">
 
         <classes>
-            <class name="runners.CucumberRunner"/>
+            <class name="runners.CucumberHW6ex1Runner"/>
+            <class name="runners.CucumberHW6ex2Runner"/>
         </classes>
 
     </test>

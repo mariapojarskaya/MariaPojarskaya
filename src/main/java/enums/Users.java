@@ -12,4 +12,18 @@ public enum Users {
         this.login = login;
         this.password = password;
     }
+
+    public static Users getUser(String name) {
+        for (Users user : Users.values()) {
+            if (user.username.equalsIgnoreCase(name)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return username;
+    }
 }
