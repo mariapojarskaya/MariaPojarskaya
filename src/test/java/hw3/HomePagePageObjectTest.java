@@ -16,7 +16,7 @@ import static enums.Users.PITER_CHAILOVSKII;
 import static enums.mainPage.Titles.HOME_PAGE_TITLE;
 import static enums.mainPage.Titles.SUBHEADER_LINK;
 
-public class HomePageTestPageObject extends TestBase {
+public class HomePagePageObjectTest extends TestBase {
 
     private WebDriver driver;
     private HomePageSelenium homePageSelenium;
