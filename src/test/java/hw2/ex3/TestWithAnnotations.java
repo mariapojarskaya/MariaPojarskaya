@@ -39,7 +39,7 @@ public class TestWithAnnotations extends TestBase {
     @Test
     public void mainPageTest() {
 
-        setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
+        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();

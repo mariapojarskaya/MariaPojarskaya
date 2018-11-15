@@ -18,7 +18,7 @@ public class SoftMainPageTest {
     @Test
     public void softMainPageTest() {
 
-        setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
+        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();

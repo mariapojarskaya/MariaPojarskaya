@@ -12,11 +12,11 @@ public class TestBase {
 
     @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
-        setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
+        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
 
     }
 
-    //src/main/resources/driver/chromedriver
+    //src\main\resources\chromedriver.exee
     @AfterSuite(alwaysRun = true)
     public void afterSuite() {
         System.out.println(System.currentTimeMillis());

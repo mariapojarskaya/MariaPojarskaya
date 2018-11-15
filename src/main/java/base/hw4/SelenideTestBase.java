@@ -9,6 +9,6 @@ public class SelenideTestBase {
     @BeforeSuite
     public void beforeSuite() {
         Configuration.browser = "chrome";
-        setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
+        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
     }
 }

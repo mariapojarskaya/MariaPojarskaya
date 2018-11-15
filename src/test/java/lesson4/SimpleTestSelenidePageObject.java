@@ -34,7 +34,7 @@ public class SimpleTestSelenidePageObject extends SelenideTestBase {
     @TmsLink("")
     @Test
     public void simpleTest() {
-        setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
+        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
 
         //Navigate
         open("https://epam.github.io/JDI/index.html");
