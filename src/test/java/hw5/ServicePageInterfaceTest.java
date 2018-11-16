@@ -19,8 +19,8 @@ import static enums.ServiceItems.getServiceItems;
 import static enums.Urls.HOME_PAGE;
 import static enums.Users.PITER_CHAILOVSKII;
 
-@Feature("hw5 test")
-@Story("Service page interface testing")
+@Feature("Smoke tests")
+@Story("Service Page Testing")
 @Listeners(AllureAttachmentListener.class)
 
 public class ServicePageInterfaceTest extends SelenideTestBase {

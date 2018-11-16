@@ -1,6 +1,8 @@
 package hw4.ex2;
 
 import base.hw4.SelenideTestBase;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.hw4.DatesPage;
@@ -11,7 +13,8 @@ import static enums.Sliders.FROM;
 import static enums.Sliders.TO;
 import static enums.Urls.HOME_PAGE;
 import static enums.Users.PITER_CHAILOVSKII;
-
+@Feature("Smoke tests")
+@Story("Dates Page Testing")
 public class DatesPageTest extends SelenideTestBase {
 
     private HomePageSelenide homePage;

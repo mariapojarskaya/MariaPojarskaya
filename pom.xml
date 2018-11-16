@@ -15,7 +15,6 @@
         <allure.version>2.6.0</allure.version>
         <aspectj.version>1.8.12</aspectj.version>
         <suiteXmlFile>jdi.xml</suiteXmlFile>
-
     </properties>
 
 

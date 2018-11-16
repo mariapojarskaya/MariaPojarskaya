@@ -3,6 +3,8 @@ package hw8;
 import JDI.base.JDITestBase;
 import JDI.dataProviders.DataProviders;
 import JDI.entities.MetalsColorsData;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -10,7 +12,8 @@ import static JDI.JDISite.homePage;
 import static JDI.JDISite.metalsAndColorsPage;
 import static JDI.enums.HeaderMenu.METALS_COLORS;
 import static JDI.enums.Users.PITER_CHAILOVSKII;
-
+@Feature("Smoke tests")
+@Story("Metals and Colors Page Testing")
 public class MetalsAndColorsPageTest extends JDITestBase {
 
     @AfterMethod(alwaysRun = true)

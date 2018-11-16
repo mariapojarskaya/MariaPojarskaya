@@ -1,6 +1,8 @@
 package hw4.ex1;
 
 import base.hw4.SelenideTestBase;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.hw4.DifferentElementsPage;
@@ -15,7 +17,8 @@ import static enums.ServiceItems.getServiceItems;
 import static enums.Urls.HOME_PAGE;
 import static enums.Users.PITER_CHAILOVSKII;
 
-
+@Feature("Smoke tests")
+@Story("Service Page Testing")
 public class ServicePageInterfaceTest extends SelenideTestBase {
 
     private HomePageSelenide homePageSelenide;
