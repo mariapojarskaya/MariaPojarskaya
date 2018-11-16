@@ -17,7 +17,7 @@ public class SmokeAndRegressionTests {
     @Test(groups = {"Smoke"})
     public void mainPageTestSR1() {
 
-        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "src/chromedriver");
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
@@ -125,7 +125,7 @@ public class SmokeAndRegressionTests {
     @Test(groups = {"Regression"})
     public void mainPageTestSR2() {
 
-        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "src/chromedriver");
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
@@ -233,7 +233,7 @@ public class SmokeAndRegressionTests {
     @Test(groups = {"Regression"})
     public void mainPageTestSR3() {
 
-        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "src/chromedriver");
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();

@@ -17,7 +17,7 @@ public class RegressionTests {
     @Test(groups = "Regression")
     public void mainPageTestR1() {
 
-        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "src/chromedriver");
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
@@ -125,7 +125,7 @@ public class RegressionTests {
     @Test(groups = "Regression")
     public void mainPageTestR2() {
 
-        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "src/chromedriver");
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
@@ -233,7 +233,7 @@ public class RegressionTests {
     @Test(groups = "Regression")
     public void mainPageTestR3() {
 
-        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "src/chromedriver");
 
         //1. Open test site by URL
         WebDriver driver = new ChromeDriver();
