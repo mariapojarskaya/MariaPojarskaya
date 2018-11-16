@@ -4,7 +4,8 @@
     <test name="Simple Test">
 
         <classes>
-            <class name="hw5.ServicePageInterfaceTest"/>
+            <class name="hw4.ex1.ServicePageInterfaceTest"/>
+            <class name="hw4.ex2.DatesPageTest"/>
         </classes>
 
     </test>

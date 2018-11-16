@@ -1,4 +1,4 @@
-package hw5.ex1;
+package hw5;
 
 import base.hw4.SelenideTestBase;
 import io.qameta.allure.Feature;
@@ -19,7 +19,7 @@ import static enums.ServiceItems.getServiceItems;
 import static enums.Urls.HOME_PAGE;
 import static enums.Users.PITER_CHAILOVSKII;
 
-@Feature("Smoke tests")
+@Feature("hw5 test")
 @Story("Service page interface testing")
 @Listeners(AllureAttachmentListener.class)
 
