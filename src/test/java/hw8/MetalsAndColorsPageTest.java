@@ -12,6 +12,7 @@ import static JDI.JDISite.homePage;
 import static JDI.JDISite.metalsAndColorsPage;
 import static JDI.enums.HeaderMenu.METALS_COLORS;
 import static JDI.enums.Users.PITER_CHAILOVSKII;
+
 @Feature("Smoke tests")
 @Story("Metals and Colors Page Testing")
 public class MetalsAndColorsPageTest extends JDITestBase {

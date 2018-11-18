@@ -14,7 +14,8 @@
         <java.version>1.8</java.version>
         <allure.version>2.6.0</allure.version>
         <aspectj.version>1.8.12</aspectj.version>
-        <suiteXmlFile>jdi.xml</suiteXmlFile>
+
+
     </properties>
 
 
@@ -201,11 +202,52 @@
                 <artifactId>allure-maven</artifactId>
                 <version>2.9</version>
                 <configuration>
-                    <allureDownloadUrl>https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/allure-2.7.0.zip</allureDownloadUrl>
+                    <allureDownloadUrl>
+                        https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/allure-2.7.0.zip
+                    </allureDownloadUrl>
                     <reportVersion>2.7.0</reportVersion>
                 </configuration>
             </plugin>
         </plugins>
     </reporting>
+
+    <profiles>
+        <profile>
+            <id>hw7</id>
+            <properties>
+                <suiteXmlFile>testngJenkins.xml</suiteXmlFile>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>hw8</id>
+            <properties>
+                <suiteXmlFile>jdi.xml</suiteXmlFile>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>hw6</id>
+            <properties>
+                <suiteXmlFile>testngAllure.xml</suiteXmlFile>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>hw4</id>
+            <properties>
+                <suiteXmlFile>userAndServicePageTesthw6.xml</suiteXmlFile>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 
 </project>
