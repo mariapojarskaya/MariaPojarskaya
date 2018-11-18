@@ -14,7 +14,7 @@
         <java.version>1.8</java.version>
         <allure.version>2.6.0</allure.version>
         <aspectj.version>1.8.12</aspectj.version>
-
+        <suiteXmlFile>testngJenkins.xml</suiteXmlFile>
 
     </properties>
 
@@ -211,43 +211,5 @@
         </plugins>
     </reporting>
 
-    <profiles>
-        <profile>
-            <id>hw7</id>
-            <properties>
-                <suiteXmlFile>testngJenkins.xml</suiteXmlFile>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>hw8</id>
-            <properties>
-                <suiteXmlFile>jdi.xml</suiteXmlFile>
-            </properties>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>hw6</id>
-            <properties>
-                <suiteXmlFile>testngAllure.xml</suiteXmlFile>
-            </properties>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>hw4</id>
-            <properties>
-                <suiteXmlFile>userAndServicePageTesthw6.xml</suiteXmlFile>
-            </properties>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
 
 </project>
