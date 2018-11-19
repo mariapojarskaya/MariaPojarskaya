@@ -34,7 +34,7 @@ public class DifferentElementsPageSuite extends SelenideTestBase {
     }
 
     @Test
-    public void differentElementsPageInterfaceTest() {
+    public void differentElementsPageTest() {
 
         //1 Open test site by URL
         homePage.openPage();

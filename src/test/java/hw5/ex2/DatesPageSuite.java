@@ -30,7 +30,8 @@ public class DatesPageSuite extends SelenideTestBase {
         datesPage = page(DatesPage.class);
     }
 
-    @Test public void datesPageSliders() {
+    @Test
+    public void datesPageSliders() {
 
         //1 Open test site by URL
         homePage.openPage();
