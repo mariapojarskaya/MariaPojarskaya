@@ -1,6 +1,6 @@
 package lesson5;
 
-import base.SelenideTestBase;
+import base.hw4.SelenideTestBase;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.annotations.BeforeClass;

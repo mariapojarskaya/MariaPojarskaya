@@ -1,6 +1,6 @@
 package lesson4;
 
-import base.SelenideTestBase;
+import base.hw4.SelenideTestBase;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.*;
 import listeners.AllureAttachmentListener;
